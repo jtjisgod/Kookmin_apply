@@ -1,0 +1,67 @@
+{% include("head.html") %}
+
+<!-- 
+	Created by 조경상
+	Fixed by 장태진 ( BAD HTML, BAD CSS 수정, 디자인 )
+-->
+
+<style>
+section div {
+	border : 1px solid #aaa;
+	overflow:hidden;
+	background : #eee;
+	height : 150px;
+	overflow-y : scroll;
+}
+section div div{
+	display:inline-block;
+	width:200px;
+	height:130px;
+	margin:10px;
+	font-size : 12px;
+	padding : 10px;
+	vertical-align: top;
+	background : #fff;
+}
+section span{
+	font-size:1.5em;
+}
+
+/* @author : jangtaejin */
+h4{
+	font-size : 15px;
+	font-weight : bold;
+}
+</style>
+	<h1>버전관리 페이지</h1>
+	<hr>
+	<span>학교 선택 : </span><select name="학교"> <option value="1">국민대학교</option><option value="2">서울대학교</option> <option value="3">KAIST</option></select><br><br>
+	<h4>1번 질문(이 과에 지원한 동기를 쓰시오.)</h4>
+	<div>
+		<div><strong>2018.08.06 [금] (12:00)</strong><br> 멋있고 재밌어 보여서 입니다.</div>
+		<div><strong>2018.08.05 [목] (13:01)</strong><br> 멋있어 보여서 입니다.</div>
+		<div><strong>2018.08.04 [수] (17:07)</strong><br> ................</div>
+		<div><strong>2018.08.03 [화] (18:30)</strong><br> ................</div>
+		<div><strong>2018.08.02 [월] (07:00)</strong><br> ................</div>
+	</div>
+	<br>
+	<h4>2번 질문(학업에 기울인 노력에 대해 쓰시오.)</h4>
+	<div>
+		<div><strong>2018.08.06 [금] (12:00)</strong><br> 도서관에서 공부를 하면서 모르는 내용이 있으면 책을 찾아 보면서 공부하였습니다.</div>
+		<div><strong>2018.08.05 [목] (13:01)</strong><br> 도서관에서 열심히 공부했습니다.</div>
+		<div><strong>2018.08.04 [수] (17:07)</strong><br> ................</div>
+		<div><strong>2018.08.03 [화] (18:30)</strong><br> ................</div>
+		<div><strong>2018.08.02 [월] (07:00)</strong><br> ................</div>
+	</div>
+	<br>
+	<h4>3번 질문(학교 생활 중 의미 있던 경험과 느낀점을 쓰시오.)</h4>
+	<div>
+		<div><strong>2018.08.06 [금] (12:00)</strong><br> 축구 동아리 활동을 하면서 협동의 중요성을 알게 되었고, 협동을 통해 친구와 우정을 쌓을수 있었습니다.</div>
+		<div><strong>2018.08.05 [목] (13:01)</strong><br> 축구 동아리 활동을 하면서 협동의 중요성을 알게 되었습니다.</div>
+		<div><strong>2018.08.04 [수] (17:07)</strong><br> ................</div>
+		<div><strong>2018.08.03 [화] (18:30)</strong><br> ................</div>
+		<div><strong>2018.08.02 [월] (07:00)</strong><br> ................
+		</div>
+	</div>
+
+{% include("foot.html") %}

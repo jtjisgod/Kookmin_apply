@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/login.css">
+    <script src="/static/script.js"></script>
+	<style>
+		#box {
+			font-size : 12px;
+			margin : 30px auto;
+			max-width:500px;
+		}
+	</style>
+</head>
+<body>
+<!-- 
+	Created by 오수찬 (HTML)
+	Fixed by 장태진 (CSS, BAD HTML CHECK & FIX)
+-->
+	<div id="box">
+
+		<div>Registration</div>
+
+
+		<form>
+			ID: <input type="text" size="7" value=""><br><br>
+			Password: <input type="password" size="15" value=""><br><br>
+			PW check: <input type="password" size="15" value=""><br><br>
+			Name: <input type="text" size="4" value=""><br><br>
+			<!-- <form>
+				<input type="radio" name="man" value="1">
+					Male
+				<input type="radio" name="woman" value="2">
+					Female						
+			</form><br> -->
+			<table>
+				<tr><td>Birthday</td>
+					<td><input type="date" value="2000-05-20"></td></tr>
+			</table>
+			</form><br>
+
+			Email: <input type="email" placeholder="id@host">
+
+			<br>
+			<br>
+
+			Mobile: <input type="tel" placeholder="010-0000-0000"><br><br>
+
+			<div>
+				<label for=""><input type="checkbox">개인정보취급방침</label>
+				&nbsp;&nbsp;
+				<label for=""><input type="checkbox">회원가입약관</label>
+			</div>
+				
+			<input type="submit" class="btn btn-primary" style="font-size : 13px;width : 100%;" value="회원가입">
+		</form>			
+
+	</div>
+
+</body>
+</html>
