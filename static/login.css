@@ -1,0 +1,20 @@
+body {
+	background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(/static/comp1.png);
+	height: 100vh;
+	background-size: cover;
+    background-position: center;
+}
+
+
+#box {
+    background : #ffffff;
+}
+
+input {
+    padding : 10px;
+}
+
+
+.val_error{
+	color: #FF1F1F;
+}

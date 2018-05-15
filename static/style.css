@@ -19,7 +19,7 @@ a:hover {
 }
 
 #box {
-    max-width : 300px;
+    max-width : 400px;
     margin : 100px auto;
     padding : 20px;
     border : 1px solid #ddd;
@@ -86,4 +86,8 @@ iframe {
 .countWord  {
     font-size : 14px;
     text-align : right;
+}
+
+.countWord > span {
+    color : red;
 }

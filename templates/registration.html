@@ -31,10 +31,12 @@
 		<div>Registration</div>
 
 
-		<form>
-			ID: <input type="text" size="7" value=""><br><br>
-			Password: <input type="password" size="15" value=""><br><br>
-			PW check: <input type="password" size="15" value=""><br><br>
+		<form name="vform" onsubmit="return Validate()" action="/">
+			ID: <input type="text" size="7" name="username" value="">
+			<div id="name_error" class="val_error"></div><br>
+			Password: <input type="password" name="password" size="15" value=""><br><br>
+			PW check: <input type="password" name="password_confirmation" size="15" value="">
+			<div id="password_error" class="val_error"></div><br>
 			Name: <input type="text" size="4" value=""><br><br>
 			<!-- <form>
 				<input type="radio" name="man" value="1">
@@ -46,14 +48,16 @@
 				<tr><td>Birthday</td>
 					<td><input type="date" value="2000-05-20"></td></tr>
 			</table>
-			</form><br>
 
-			Email: <input type="email" placeholder="id@host">
+			<br>
+
+			Email: <input type="email" name="email" placeholder="id@host">
+			<div id="email_error" class="val_error"></div>
 
 			<br>
 			<br>
 
-			Mobile: <input type="tel" placeholder="010-0000-0000"><br><br>
+			Mobile: <input type="tel" name="telephone" placeholder="010-0000-0000"><br><br>
 
 			<div>
 				<label for=""><input type="checkbox">개인정보취급방침</label>
@@ -65,6 +69,74 @@
 		</form>			
 
 	</div>
+		
+	<script>
+		var username = document.forms["vform"]["username"];
+		var email = document.forms["vform"]["email"];
+		var password = document.forms["vform"]["password"];
+		var password_confirmation = document.forms["vform"]["password_confirmation"];
 
+		var name_error = document.getElementById('name_error');
+		var email_error = document.getElementById('email_error');
+		var password_error = document.getElementById('password_error');
+
+		username.addEventListener("blur", nameVerify, true);
+		email.addEventListener("blur", emailVerify, true);
+		password.addEventListener("blur", passwordVerify, true);
+
+
+		function Validate(){
+			if (username.value == "") {
+				username.style.border = "1px solid red";
+				name_error.textContent = "Username is required";
+				username.focus();
+				return false;
+			}
+
+			if (email.value == "") {
+				email.style.border = "1px solid red";
+				email_error.textContent = "Email is required";
+				email.focus();
+				return false;
+			}
+
+			if (password.value == "") {
+				password.border = "1px solid red";
+				password_error.textContent = "Password is required";
+				password.focus();
+				return false;
+			}
+
+			if (password.value != password_confirmation.value) {
+				password.style.border = "1px solid red";
+				password_confirmation.style.border = "1px solid red";
+				password_error.innerHTML = "The two passwords do not match";
+				return false;
+			}
+		}
+
+
+		function nameVerify(){
+			if (username.value !="") {
+				username.style.border = "1px solid #5E6E66";
+				name_error.innerHTML = "";
+				return true;
+			}
+		}
+		function emailVerify(){
+			if (email.value !="") {
+				email.style.border = "1px solid #5E6E66";
+				email_error.innerHTML = "";
+				return true;
+			}
+		}
+		function passwordVerify(){
+			if (password.value !="") {
+				password.style.border = "1px solid #5E6E66";
+				password_error.innerHTML = "";
+				return true;
+			}
+		}
+	</script>
 </body>
 </html>

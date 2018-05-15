@@ -1,19 +1,78 @@
 {% include("head.html") %}
+  <style>
+    .answer {
+      width : 100%;
+      border : 2px solid black;
+    }
+    .boxSize {
+      vertical-align: top;
+    }
+    .contents {
+      overflow-y: scroll;
+    }
+    #question {
+      font-size : 30px;
+      font-weight : bold;
+    }
+    tr > td {
+      padding : 20px 20px 0px 20px;
+    }
+    tr > td > span {
+      font-size : 15px;
+      color : #aaa;
+    }
+    tr:nth-child(2n-1) > td {
+      border-bottom : 1px dashed #000;
+    }
+    tr:nth-child(2n) > td {
+      border-bottom : 2px solid #000;
+    }
+  </style>
+  <script>
+    function selectEvent() {
+        var id_teacher = document.getElementById("id-teacher");
+        var teacher_value = id_teacher.options[id_teacher.selectedIndex].value;
+        var question = document.getElementById("question");
+        if(teacher_value=="1") {
+            question.innerHTML = '1번. 당신은 밥을 얼마나 자주먹습니까?'
+            answer1.innerHTML = '1. 저는 어릴적 가난하게 태어나 먹을 것에 욕심이 많았습니다.';
+            answer2.innerHTML = '1. 저는 어릴 적에 가난한 집안에서 자라, 많이 먹질 못하여 먹을 것에 욕심이많았습니다.';
+            answer3.innerHTML = '2. 그래서 저는 밥을 많이먹습니다.';
+            answer4.innerHTML = '<span>수정된 내용이 없습니다.</span>';
+        }
+        else if(teacher_value=="2") {
+            question.innerHTML = '2번. 당신은 누구인가요?'
+            answer1.innerHTML = '저는 한정택입니다';
+            answer2.innerHTML = '국민대학교에 재학 중입니다.';
+            answer3.innerHTML = '코딩을 잘합니다';
+            answer4.innerHTML = '키가 큽니다';
+        }
+    }
+  </script>
 
-    <!-- 
-        Created by 이준석 ( HTML )
-     -->
-    첨삭 확인 페이지
-    <!-- 로고 이미지 -->
-      <p><select name="선생님"><option value="1">장태진선생님</option></select>께서 첨삭하신 내용입니다.</p>
-      <select name="날짜"><option value="1">2018.04.14</option></select>
-      <br>
-      <table border = "1">
-        <caption>1번. 당신은 밥을 얼마나 자주먹습니까?</caption>
-        <tr><td>1. 저는 어릴쩍 가난하게 태어나 먹을 것에 욕심이 많았습니다.</td></tr>
-        <tr><td>1. 저는 어릴 적에 가난한 집안에서 자라, 많이 먹질 못하여 먹을 것에 욕심이많았습니다.</td></tr>
-        <tr><td>2. 그래서 저는 밥을 많이먹습니다.</td></tr>
-        <tr><td>2. 수정된 내용이 없습니다.</td></tr>
-      </table>
+  <!-- 
+    Created by 이준석 ( HTML )
+  -->
 
+  <br>
+
+  <select id="id-teacher" name="teacher" onchange="selectEvent()">
+      <option value="1" selected>장태진선생님</option>
+      <option value="2">한정택선생님</option>
+  </select>께서
+  <select name="날짜">
+    <option value="1">2018.04.14</option>
+    <option value="2">2018.05.01</option>
+  </select>에 첨삭하신 내용입니다.
+
+  <br>
+  <br>
+  
+  <p id="question">1번. 당신은 밥을 얼마나 자주먹습니까?</p>
+  <table class="answer">
+    <tr class="boxSize"><td class="contents"><p id="answer1">1. 저는 어릴적 가난하게 태어나 먹을 것에 욕심이 많았습니다.</p></td></tr>
+    <tr class="boxSize"><td class="contents"><p id="answer2">1. 저는 어릴 적에 가난한 집안에서 자라, 많이 먹질 못하여 먹을 것에 욕심이많았습니다.</p></td></tr>
+    <tr class="boxSize"><td class="contents"><p id="answer3">2. 그래서 저는 밥을 많이먹습니다.</p></td></tr>
+    <tr class="boxSize"><td class="contents"><p id="answer4"><span>수정된 내용이 없습니다.</span></p></td></tr>
+  </table>
 {% include("foot.html") %}
