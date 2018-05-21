@@ -15,6 +15,24 @@
 	<script src="/static/script.js"></script>
 </head>
 <body>
+<script>
+	function login() {
+		var username = "박수현교수님사랑해요";
+		var password = "really";
+		if($("#username").val() == username) {
+			if($("#password").val() == password) {
+				alert("로그인 성공!");
+				location.href='/version';
+			} else {
+				alert("비밀번호가 다릅니다.");
+				return;
+			}			
+		} else {
+			alert("존재하지 않는 아이디입니다,");
+			return;
+		}
+	}
+</script>
 <!-- 
 	Created by 오수찬 (HTML)
 	Fixed by 장태진 (CSS, BAD HTML CHECK & FIX)
@@ -24,12 +42,12 @@
 		<br>
 		<form name="fo" method="get">
 		<div>User ID</div>
-		<input type="text" size="15" value=""><br>
+		<input type="text" size="15" value="" id="username"><br>
 		<div>Password</div>
-		<input type="password" size="15" value=""><br>
+		<input type="password" size="15" value="" id="password"><br>
 		<br>
-		<button id="btn_login" class="btn btn-primary" onclick="location.href='/version';return false;">LOGIN</button>
-		<button id="btn_registration" class="btn btn-default">REGISTRATION</button>
+		<button id="btn_login" class="btn btn-primary" onclick="login();return false;">LOGIN</button>
+		<button id="btn_registration" class="btn btn-default" onclick="location.href='/registration';return false;">REGISTRATION</button>
 		<!-- <div class="checkbox"><br>
 			<label>
 				<input type="checkbox" id="remember" name="rememberusername">
