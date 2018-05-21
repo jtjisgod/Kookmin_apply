@@ -8,6 +8,10 @@ app = Flask(__name__)
 def login() :
     return render_template("login.html")
 
+@app.route("/pleaseCheck")
+def pleaseCheck() :
+    return render_template("pleaseCheck.html")
+
 @app.route("/registration")
 def registration() :
     return render_template("registration.html")

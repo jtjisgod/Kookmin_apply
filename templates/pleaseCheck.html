@@ -1,0 +1,40 @@
+{% include("head.html") %}
+
+<!-- 
+    Created by 장태진
+    -->
+<div class="sBox">
+    <h2>첨삭요청</h2>
+    <br>
+    <div>첨삭을 요청드릴 선생님</div>
+    <select name="teacher" id="teacher">
+        <option value="0">-- 첨삭자를 선택해주세요 --</option>
+        <option value="1">장태진</option>
+        <option value="2">한정택</option>
+    </select>
+    <br>
+    <br>
+    <div>요청할 자기소개서</div>
+    <select name="type" id="type">
+        <option value="0">-- 보고서를 선택해주세요 --</option>
+        <option value="1">국민대학교</option>
+        <option value="2">고려대학교</option>
+        <option value="3">KAIST</option>
+    </select>
+    <br>
+    <br>
+    <button class="btn btn-success" style="width:100%; padding:20px;"><b>첨삭</b> 해주실 것을 부탁드립니다.</button>
+</div>
+<style>
+    .sBox {
+        width:500px;
+        margin:50px auto;
+        border:1px solid #ddd;
+        padding:20px;
+    }
+    .sBox > select {
+        width : 100%;
+    }
+</style>
+
+{% include("foot.html") %}
